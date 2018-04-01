@@ -1,0 +1,6 @@
+<ul >
+  <li ng-repeat = "item in dirCtrl.items track by $index">
+    {{item}}
+    <button ng-click="dirCtrl.removeItem({index:$index});"> Don't Want this one </button>
+  </li>
+</ul>
