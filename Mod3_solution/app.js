@@ -28,7 +28,7 @@ MenuSearchService.getMatchedMenuItems().then( function(result){
     menu.message="Nothing found.Please search with different criteria!";
   }
     for(var i=0; i< result.data.menu_items.length; i++){
-      if(result.data.menu_items[i].description.includes(searchTerm)){
+      if(result.data.menu_items[i].description.indexOf(searchTerm) != -1){
         menu.founditem.push(result.data.menu_items[i].name + " ," + result.data.menu_items[i].description + " ," + result.data.menu_items[i].short_name);
       }
     }
