@@ -1,0 +1,16 @@
+<div ng-if="infoCtrl.message">
+  <h2><a ui-sref="public.signup">Not Signed Up Yet. Sign up Now!</a></h2>
+</div>
+</div>
+<div ng-if="!infoCtrl.message">
+<h2>Registered Information : </h2> <br>
+<span> First Name :  {{infoCtrl.obj.fName}} </span> <br>
+<span> Last Name :  {{infoCtrl.obj.lName}} </span> <br>
+<span> Email :  {{infoCtrl.obj.em}} </span> <br>
+<span> Phone :  {{infoCtrl.obj.phone}} </span> <br>
+<div> Favourite Dish : <br>
+<span> Title : {{infoCtrl.obj.title}} </span> <br>
+<span> Description : {{infoCtrl.obj.desc}}</span> <br>
+<span> <img class="img-responsive" width="250" height="150"  ng-src="{{infoCtrl.basePath}}/images/menu/{{infoCtrl.obj.imgName}}/{{infoCtrl.obj.imgName}}.jpg" alt="{{infoCtrl.obj.title}}" >
+</div>
+</div>

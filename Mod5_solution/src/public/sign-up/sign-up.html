@@ -1,0 +1,27 @@
+<div ng-controller = "FormController as ctrl">
+<form name="regForm" novalidate>
+    First Name : <input type="text" name="firstName" ng-model="ctrl.firstName" placeholder="Enter First name" required minlength="4" ng-maxlength="10">
+    <span ng-if="(regForm.firstName.$error.minlength || regForm.firstName.$error.required)
+     && regForm.firstName.$touched">First Name must be atleast 4 characters</span>
+    <br>
+    Last Name : <input type="text" name="lastName" ng-model="ctrl.lastName" placeholder="Enter Last name">
+    <br>
+    Email : <input type="email" name="email" ng-model="ctrl.email" placeholder="Email">
+    <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+            Must be a valid email address: handle@domain format
+    </span>
+    <br>
+    Phone : <input type="text" name="phone" ng-model="ctrl.phone" placeholder="Phone ###-###-####"
+    pattern="(\d{3})-(\d{3})-(\d{4})">
+    <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+           Phone must be in the format ###-###-####.
+    </span>
+    <br>
+    Favourite Dish : <input type="text" name="dish" ng-model="ctrl.dish" placeholder="Short Name" required>
+    <span ng-if="regForm.dish.$error.required && regForm.dish.$touched">
+      Favourite Dish required</span>
+    <br><br>
+    <button ng-disabled="regForm.$invalid" ng-click="ctrl.submit(ctrl.dish)">Submit</button>
+    <br>
+    <span ng-if="ctrl.message"> {{ctrl.message}}</span>
+  </form>
