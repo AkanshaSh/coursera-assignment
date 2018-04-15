@@ -1,6 +1,6 @@
 <div ng-controller = "FormController as ctrl">
 <form name="regForm" novalidate>
-    First Name : <input type="text" name="firstName" ng-model="ctrl.firstName" placeholder="Enter First name" required minlength="4" ng-maxlength="10">
+    First Name* : <input type="text" name="firstName" ng-model="ctrl.firstName" placeholder="Enter First name" required minlength="4" ng-maxlength="10">
     <span ng-if="(regForm.firstName.$error.minlength || regForm.firstName.$error.required)
      && regForm.firstName.$touched">First Name must be atleast 4 characters</span>
     <br>
@@ -17,7 +17,7 @@
            Phone must be in the format ###-###-####.
     </span>
     <br>
-    Favourite Dish : <input type="text" name="dish" ng-model="ctrl.dish" placeholder="Short Name" required>
+    Favourite Dish* : <input type="text" name="dish" ng-model="ctrl.dish" placeholder="Short Name" required>
     <span ng-if="regForm.dish.$error.required && regForm.dish.$touched">
       Favourite Dish required</span>
     <br><br>
